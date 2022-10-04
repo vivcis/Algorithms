@@ -4,8 +4,8 @@ func breakingRecords(scores []int32) []int32 {
 
 	var minCount int32
 	var maxCount int32
-	var maxScore int32 = scores[0]
-	var minScore int32 = scores[0]
+	var maxScore = scores[0]
+	var minScore = scores[0]
 	var result []int32
 
 	if len(scores) > 1 {

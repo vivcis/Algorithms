@@ -26,3 +26,22 @@ func hackerrankInString(s string) string {
 	}
 	return "NO"
 }
+
+func hackerrankInString1(s string) string {
+	// create a variable to store hackerrank
+	result := "hackerrank"
+
+	if len(s) < len(result) {
+		return "NO"
+	}
+	for i := 0; i < len(s); i++ {
+		if s[i] == result[0] {
+			if len(result) == 1 {
+				return "YES"
+			} else {
+				result = result[1:]
+			}
+		}
+	}
+	return "NO"
+}
