@@ -2,13 +2,20 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func main() {
 	//fizzBuzz(10)
 	//fizz()
 	//buzz()
-	FIZZbuzz()
+	//FIZZbuzz()
+
+	fmt.Println("Main function")
+
+	go countNumbers(20)
+
+	fmt.Println("End main function")
 }
 
 //Write a short program that prints each number from 1 to 100 on a new line.
@@ -77,4 +84,13 @@ func FIZZbuzz() {
 			fmt.Println(i)
 		}
 	}
+}
+
+func countNumbers(limit int) {
+	time.Sleep(1 * time.Second)
+	num := 0
+	for i := 1; i < limit; i++ {
+		num += i
+	}
+	fmt.Println("Num: ", num)
 }
