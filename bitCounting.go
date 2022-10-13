@@ -24,12 +24,9 @@ func CountBits1(n uint) int {
 }
 
 //OR
-var CountBits2 = OnesCount
+var CountBits2 = bits.OnesCount
 
-//OR
-var CountBits3 = bits.OnesCount
-
-func CountBits4(b uint) int {
+func CountBits3(b uint) int {
 	bits := 0
 	for b > 0 {
 		b = b & (b - 1)
