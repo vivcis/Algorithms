@@ -12,7 +12,6 @@ func main() {
 	//FIZZbuzz()
 
 	fmt.Println("Main function")
-
 	go countNumbers(20)
 
 	fmt.Println("End main function")
