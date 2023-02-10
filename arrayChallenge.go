@@ -33,3 +33,42 @@ func ArrayChallenge(arr []int) int {
 
 	return max
 }
+
+func ArrayChallenge1(arr []int) int {
+	// Get the length of the input array
+	lenNums := len(arr)
+
+	// Create an array `lis` to store the length of the longest increasing subsequence ending at each index
+	lis := make([]int, lenNums)
+
+	// Initialize each value in the `lis` array to 1, since the minimum length of an increasing subsequence is 1
+	for i := 0; i < lenNums; i++ {
+		lis[i] = 1
+	}
+
+	// Iterate over the input array from the second element to the last
+	for i := 1; i < lenNums; i++ {
+		// For each element, iterate over all the previous elements
+		for j := 0; j < i; j++ {
+			// If the current element is greater than the previous element and the length of the longest increasing
+			//subsequence ending at the current element is less than the length of the longest increasing subsequence
+			//ending at the previous element plus 1, then update the length of the longest increasing subsequence ending at the current element
+			if arr[i] > arr[j] && lis[i] < (lis[j]+1) {
+				lis[i] = lis[j] + 1
+			}
+		}
+	}
+
+	// Initialize a variable `max` to store the length of the longest increasing subsequence
+	max := 0
+
+	// Iterate over the `lis` array and update `max` with the maximum value in the `lis` array
+	for i := 0; i < lenNums; i++ {
+		if lis[i] > max {
+			max = lis[i]
+		}
+	}
+
+	// Return the length of the longest increasing subsequence
+	return max
+}
