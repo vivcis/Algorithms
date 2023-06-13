@@ -4,7 +4,11 @@ package main
 //print Crackle instead of the number. If it's divisible by 5, print Pop. If it's divisible by both 3 and 5, print CracklePop.
 
 func main() {
-	cracklePop()
+	//cracklePop()
+	n := int64(20)
+	p := int64(7)
+	result := pthFactor(n, p)
+	println(result)
 }
 
 func cracklePop() {
